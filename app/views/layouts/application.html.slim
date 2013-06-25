@@ -22,22 +22,18 @@ html lang="en"
             span.icon-bar
           a.brand href="#"Project25843
           .container-fluid.nav-collapse
-            ul.nav
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+            ul.nav.pull-right
+              - if user_signed_in?
+                li = link_to t(:logout), destroy_user_session_path, :method=>'delete'
+                li = link_to 'Edit account', edit_user_registration_path
+              - else 
+                li = link_to t(:login), new_user_session_path
+                li = link_to t(:register), new_user_registration_path
 
     .container-fluid
 
       .row-fluid
-        .span3
-          .well.sidebar-nav
-            ul.nav.nav-list
-              li.nav-header Sidebar
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
-        .span9
+        .span12.well
           = bootstrap_flash
           = yield
     
@@ -48,3 +44,4 @@ html lang="en"
       \==================================================
     /! Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
+    = debug(params) if Rails.env.development?

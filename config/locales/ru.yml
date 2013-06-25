@@ -1,2 +1,5 @@
 ru:
   hello: "Привет Мир"
+  login: "Войти"
+  logout: "Выйти"
+  register: "Регистрация"
