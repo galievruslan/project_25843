@@ -3,6 +3,7 @@
 ru:
   sign_in: "Войти"
   remember_me: "Запомни меня"
+  current_password: "Текущий пароль"
   forgot_your_password: "Забыли пароль?"
   send_reset_password_instructions: "Отправить инстукцию по смене пароля"
   errors:

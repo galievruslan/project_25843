@@ -16,6 +16,8 @@ ru:
         city: "Город"
         region: "Регион"
         country: "Страна"
+        remember_me: "Запомнить меня"
+        current_password: "Текущий пароль"
     errors:
       title: "Следующие ошибки должны быть исправлены перед сохранением"    
       messages:
@@ -29,7 +31,8 @@ ru:
   login: "Войти"
   logout: "Выйти"
   register: "Регистрация"
-  signup: "Зарегистрироваться"
+  sign_up: "Зарегистрироваться"
+  sign_in: "Войти"
   profile: "Профиль"
   brand: "Project 25843"
   username: "Имя пользователя"
@@ -43,3 +46,6 @@ ru:
   select_country: "Выберите страну"
   select_region: "Выберите регион"
   select_city: "Выберите город"
+  save: "Сохранить"
+  back: "Назад"
+  change_password: "Смена пароля"

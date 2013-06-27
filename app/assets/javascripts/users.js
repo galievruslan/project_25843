@@ -2,8 +2,12 @@ jQuery(document).ready(function() {
 	$("#user_country_id").select2({allowClear: true});
 	$("#user_region_id").select2({allowClear: true});
 	$("#user_city_id").select2({allowClear: true});
-	$('#region').hide();
-	$('#city').hide();
+	if ($('#user_region_id option:selected').val()=='') {
+		$('#region').hide();
+	}
+	if ($('#user_city_id option:selected').val()=='') {
+		$('#city').hide();
+	}
 });
 
 function onCountryChange() {

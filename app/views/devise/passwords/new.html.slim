@@ -1,0 +1,8 @@
+h4 = t(:forgot_your_password)
+= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }, :html => {:class => 'form-horizontal' }) do |f|
+	= devise_error_messages!
+	= f.input :email, :autofocus => true
+	.control-group
+		.controls
+			= f.button :submit, t(:send_reset_password_instructions)
+= render "devise/shared/links"

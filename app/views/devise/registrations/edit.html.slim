@@ -1,12 +1,9 @@
-h4 = t(:register)
+h4 = t(:profile)
 
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal'}) do |f|
   = devise_error_messages!
-
   = f.input :username, :autofocus => true, placeholder: t(:username), error: false
   = f.input :email, placeholder: t(:email), error: false
-  = f.input :password, placeholder: t(:password), error: false
-  = f.input :password_confirmation, placeholder: t(:password_confirmation), error: false
   = f.association :country, error: false, placeholder: t(:select_country), :input_html => {:onchange => 'onCountryChange()'}
   #region
     = f.association :region, error: false, placeholder: t(:select_region), :input_html => {:onchange => 'onRegionChange()'}
@@ -14,10 +11,15 @@ h4 = t(:register)
     = f.association :city, error: false, placeholder: t(:select_city)
   = f.input :birth_date, as: :date_picker, placeholder: t(:birth_date), error: false
   = f.input :gender, collection: t(@genders), as: :radio_buttons , placeholder: t(:gender), error: false
+  p 
+    b
+      = t(:change_password)
+  = f.input :current_password, placeholder: t(:current_password)
+  = f.input :password, placeholder: t(:password)
+  = f.input :password_confirmation, placeholder: t(:password_confirmation)
   .control-group
     .controls
-      = f.button :submit, t(:sign_up)
-
-= render "devise/shared/links"
+      = f.button :submit, t(:save)
+= link_to t(:back), :back
 -content_for :javascripts do
   = javascript_include_tag 'users'

@@ -10,6 +10,11 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def update
+    @genders = ['male', 'female']
+    super
+  end
+  def edit
+    @genders = ['male', 'female']
     super
   end
 
