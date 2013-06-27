@@ -1,7 +1,9 @@
 Project25843::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}, :path => "", :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'sign_up' }
 
-  root :to => 'pages#index'
+  root to: 'pages#index'
+  get '/countries/:country_id/regions', to: 'regions#index'
+  get '/countries/:country_id/regions/:region_id/cities', to: 'cities#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

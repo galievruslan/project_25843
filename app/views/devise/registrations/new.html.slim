@@ -1,0 +1,23 @@
+h2 = t(:register)
+
+= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
+  = devise_error_messages!
+
+  = f.input :username, :autofocus => true, label: t(:username), placeholder: t(:username), error: false
+  = f.input :email, placeholder: t(:email), label: t(:email), error: false
+  = f.input :password, label: t(:password), placeholder: t(:password), error: false
+  = f.input :password_confirmation, label: t(:password_confirmation), placeholder: t(:password_confirmation), error: false
+  = f.association :country, error: false, placeholder: t(:select_country), :input_html => {:onchange => 'onCountryChange()'}
+  #region
+    = f.association :region, error: false, placeholder: t(:select_region), :input_html => {:onchange => 'onRegionChange()'}
+  #city
+    = f.association :city, error: false, placeholder: t(:select_city)
+  = f.input :birth_date, as: :date_picker, placeholder: t(:birth_date), label: t(:birth_date), error: false
+  = f.input :gender, collection: t(@genders), as: :radio_buttons , placeholder: t(:gender), label: t(:gender), error: false
+  .control-group
+    .controls
+      = f.button :submit, t(:signup)
+
+= render "devise/shared/links"
+-content_for :javascripts do
+  = javascript_include_tag 'users'

@@ -70,15 +70,16 @@ ActiveRecord::Schema.define(:version => 20130625095658) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "sex"
-    t.integer  "age"
-    t.integer  "country_id"
-    t.integer  "region_id"
+    t.string   "gender"
+    t.date     "birth_date"
     t.integer  "city_id"
+    t.integer  "region_id"
+    t.integer  "country_id"
     t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end
