@@ -1,9 +1,19 @@
 Project25843::Application.routes.draw do
-  devise_for :users, :controllers => {:registrations => "registrations"}, :path => "users", :path_names => { :edit => 'profile', :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'sign_up' }
+
+
+
+  get "users/show"
+
+  devise_for :users, :controllers => {:registrations => "registrations"}, :path => "user", :path_names => { :edit => 'profile', :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'register' }
+
+  resources :users, only: :show do
+    resources :photos, :only => [:index, :create, :destroy, :new]
+  end
 
   root to: 'pages#index'
   get '/countries/:country_id/regions', to: 'regions#index'
   get '/countries/:country_id/regions/:region_id/cities', to: 'cities#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

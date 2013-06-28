@@ -1,0 +1,9 @@
+= simple_form_for [@user, @photo], :html => {:multipart => true, :class => "form-horizontal" } do |f|
+  = f.file_field :file, multiple: true, name: 'photo[file]'
+  = f.input :comment
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    '
+    = link_to t(:cancel), user_photos_path, :class => 'btn'
+-content_for :javascripts do
+  = javascript_include_tag 'photos'

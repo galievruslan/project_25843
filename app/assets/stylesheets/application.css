@@ -3,4 +3,5 @@
 	= require twitter-bootstrap-static/sprites
 	= require bootstrap-datetimepicker
 	= require select2
+	= require jquery.fileupload-ui
 */

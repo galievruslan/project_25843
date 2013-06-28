@@ -1,0 +1,25 @@
+div class="page-header"
+  h3=t(:photo)
+p
+  = image_tag @photo.file.url
+p
+  = image_tag @photo.file.thumb.url
+p
+  strong= t(:username) + ':'
+  br
+  = @photo.user.username
+p
+  strong= t(:file) + ':'
+  br
+  = @photo.file
+p
+  strong= t(:comment) + ':'
+  br
+  = @photo.comment
+
+.form-actions
+  = link_to t(:back), user_photos_path(@user), :class => 'btn'
+  '
+  = link_to t(:edit), edit_user_photo_path(@user, @photo), :class => 'btn'
+  '
+  = link_to t(:destroy), user_photo_path(@user, @photo), method: :delete, :data => { :confirm => t(:you_are_sure) }, :class => 'btn btn-danger'

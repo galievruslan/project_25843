@@ -1,0 +1,25 @@
+div class="page-header"
+  h3 =t(:photos)
+table class="table table-striped"
+  thead
+    tr
+      th= t(:file)
+      th= t(:user)
+      th= t(:comment)
+      th= t(:created_at)
+      th= t(:actions)
+  tbody
+    - @photos.each do |photo|
+      tr
+        td= photo.file
+        td= photo.user.username
+        td= photo.comment
+        td= photo.created_at
+        td
+          = link_to t(:show), user_photo_path(@user, photo), :class => 'btn btn-mini'
+          '
+          = link_to t(:edit), edit_user_photo_path(@user, photo), :class => 'btn btn-mini'
+          '
+          = link_to t(:destroy), user_photo_path(@user, photo), method: :delete, data: { confirm: t(:you_are_sure) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t(:new), new_user_photo_path(@user), :class => 'btn btn-primary'

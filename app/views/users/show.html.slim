@@ -1,0 +1,21 @@
+p  
+	b 
+		= @user.username
+table.table.table-striped
+	tbody
+		tr 
+			td = t(:gender)
+			td = @user.gender
+		tr
+			td = t(:birth_date)
+			td = @user.birth_date
+		tr
+			td = t(:country)
+			td = @user.country.name
+		tr
+			td = t(:region)
+			td = @user.region.name
+		tr
+			td = t(:city)
+			td = @user.city.name
+= link_to t(:user_photos), user_photos_path(@user)

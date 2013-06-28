@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   belongs_to :city
   belongs_to :country
   belongs_to :region
+  has_many :photos, :dependent => :destroy
   validates :username, :gender, :birth_date, :city_id, :country_id, :region_id, :email, :password, :password_confirmation, :presence => true
   validates :username, :uniqueness => { :case_sensitive => false }
-
 end

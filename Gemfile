@@ -13,13 +13,15 @@ gem 'cancan' # Users roles and abilities
 gem 'simple_form' # Advanced form's
 gem 'twitter-bootstrap-rails', '2.2.6' # Add bootstrap framework
 gem 'select2-rails' # Autocomplete select_tag 
+gem 'carrierwave' # Add upload files
+gem 'mini_magick' # Wrapper for Image 
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  
+  gem "jquery-fileupload-rails"    # Add jquery fileuploader
   gem 'bootstrap-datetimepicker-rails' # Add bootstrap datetimepicker
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

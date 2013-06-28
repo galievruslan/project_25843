@@ -17,9 +17,4 @@ class RegistrationsController < Devise::RegistrationsController
     @genders = ['male', 'female']
     super
   end
-
-  def get_regions
-    @regions = Region.where(country_id: params[:country_id]) 
-    render :partial => "regions", :object => @regions 
-  end
 end 
