@@ -1,25 +1,21 @@
+-content_for :javascripts do
+  = javascript_include_tag 'photos'
 div class="page-header"
   h3 =t(:photos)
-table class="table table-striped"
-  thead
-    tr
-      th= t(:file)
-      th= t(:user)
-      th= t(:comment)
-      th= t(:created_at)
-      th= t(:actions)
-  tbody
-    - @photos.each do |photo|
-      tr
-        td= photo.file
-        td= photo.user.username
-        td= photo.comment
-        td= photo.created_at
-        td
-          = link_to t(:show), user_photo_path(@user, photo), :class => 'btn btn-mini'
-          '
-          = link_to t(:edit), edit_user_photo_path(@user, photo), :class => 'btn btn-mini'
-          '
-          = link_to t(:destroy), user_photo_path(@user, photo), method: :delete, data: { confirm: t(:you_are_sure) }, :class => 'btn btn-mini btn-danger'
 
-= link_to t(:new), new_user_photo_path(@user), :class => 'btn btn-primary'
+ul.thumbnails
+  = render @photos
+
+= form_for Photo.new, url: user_photos_path(@user), :html => {remote: true, :class => "form-horizontal" } do |f|
+  spam.btn.btn-success.fileinput-button
+    i.icon-plus.icon-white
+    span
+      = t(:add_files)
+    = f.file_field :file, multiple: true
+br
+#uploads.span4
+script id="template-upload" type="text/x-tmpl"
+  .upload
+    | {%=o.name%}
+    .progress
+      .bar style="width: 0%"

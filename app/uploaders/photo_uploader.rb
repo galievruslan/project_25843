@@ -1,4 +1,4 @@
-# encoding: utf-8
+  # encoding: utf-8
 
 class PhotoUploader < CarrierWave::Uploader::Base
 
@@ -39,7 +39,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [200, 200]
+    process :resize_to_fill => [200, 200]
   end
 
   process :convert => 'jpg'
@@ -52,8 +52,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  def filename
-    super.chomp(File.extname(super)) + '.jpg'
-  end
+  # def filename
+  #   'test.jpg'
+  # end
 
 end

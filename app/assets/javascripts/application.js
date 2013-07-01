@@ -5,8 +5,8 @@
 //= require locales/bootstrap-datetimepicker.ru.js
 //= require select2
 //= require select2_locale_ru
-//= require jquery-fileupload
-
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 /* ===================================================
  Date and datetime pickers 
 * ===================================================*/

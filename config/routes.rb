@@ -7,7 +7,7 @@ Project25843::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}, :path => "user", :path_names => { :edit => 'profile', :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'register' }
 
   resources :users, only: :show do
-    resources :photos, :only => [:index, :create, :destroy, :new]
+    resources :photos, only: [:index, :show, :create, :edit, :update, :destroy]
   end
 
   root to: 'pages#index'

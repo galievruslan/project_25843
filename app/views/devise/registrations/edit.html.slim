@@ -20,6 +20,8 @@ h4 = t(:profile)
   .control-group
     .controls
       = f.button :submit, t(:save)
+= link_to t(:user_photos), user_photos_path(@user)
+br
 = link_to t(:back), :back
 -content_for :javascripts do
   = javascript_include_tag 'users'
