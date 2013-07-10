@@ -13,7 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/public/photos
+/public/users
 /public/uploads
 
 config/settings.local.yml
