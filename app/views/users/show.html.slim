@@ -1,11 +1,16 @@
-p  
-	b 
-		= @user.username
+.page-header
+	h4
+		= t(:profile)
 table.table.table-striped
 	tbody
+		tr
+			td
+				= t(:username)
+			td
+				= @user.username
 		tr 
 			td = t(:gender)
-			td = @user.gender
+			td = t(@user.gender)
 		tr
 			td = t(:birth_date)
 			td = @user.birth_date
@@ -18,4 +23,7 @@ table.table.table-striped
 		tr
 			td = t(:city)
 			td = @user.city.name
-= link_to t(:user_photos), user_photos_path(@user)
+.form-actions
+	= link_to t(:user_photos), user_photos_path(@user), class: 'btn btn-primary'
+	'
+	= link_to t(:edit), edit_user_path(@user), class: 'btn'

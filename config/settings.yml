@@ -1,0 +1,7 @@
+server_name: SERVER_NAME
+email: EMAIL
+mail_server: MAIL_SERVER
+mail_user: MAIL_USER
+mail_password: MAIL_PASSWORD
+smtp_port: 25
+server_port: 3000

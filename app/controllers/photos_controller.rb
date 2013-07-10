@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
   # GET /photos.json
   def index    
     @user = User.find(params[:user_id])
-    @photos = @user.photos
+    @photos = @user.photos.page(params[:page]).per(2)
     respond_to do |format|
       format.html # index.html.erb
     end
@@ -55,7 +55,7 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       if @photo.update_attributes(params[:photo])
-        format.html { redirect_to user_photo_path(@user, @photo), notice: 'Photo was successfully updated.' }
+        format.html { redirect_to user_photo_path(@user, @photo), notice: t(:photo_updated) }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -71,7 +71,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     respond_to do |format|
-      format.html { redirect_to user_photos_path(@user) }
+      format.html { redirect_to user_photos_path(@user), notice: t(:photo_destroyed) }
       format.json { head :no_content }
     end
   end

@@ -1,16 +1,16 @@
 -content_for :javascripts do
   = javascript_include_tag 'photos'
-div class="page-header"
-  h3 =t(:photos)
+.page-header
+  h4 =t(:photos)
 
 ul.thumbnails
   = render @photos
-
+= paginate @photos
 = form_for Photo.new, url: user_photos_path(@user), :html => {remote: true, :class => "form-horizontal" } do |f|
   spam.btn.btn-success.fileinput-button
     i.icon-plus.icon-white
     span
-      = t(:add_files)
+      = t(:add_photo)
     = f.file_field :file, multiple: true
 br
 #uploads.span4

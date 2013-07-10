@@ -8,6 +8,14 @@ development:
   database: db/development.sqlite3
   pool: 5
   timeout: 5000
+  # adapter: mysql2
+  # encoding: utf8
+  # reconnect: false  
+  # database: project_25843
+  # pool: 5
+  # username: project_25843
+  # password: uEfMJDRErCUKFCb5
+  # host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -5,7 +5,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create    
-    @genders = ['male', 'female']
+    @genders = ['male', 'female']   
+
     super
   end
 

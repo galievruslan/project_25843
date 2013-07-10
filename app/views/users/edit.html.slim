@@ -1,0 +1,30 @@
+.page-header
+	h4 
+		= t(:edit_profile)
+= simple_form_for(@user, :url => user_path(@user), :html => { :method => :put, :class => 'form-horizontal'}) do |f|
+	- if @user.errors.any?
+		div class="alert alert-error"
+			button type="button" class="close" data-dismiss="alert"
+				| &times;
+			h4
+				= t('errors.title')
+			ul
+				- @user.errors.full_messages.each do |msg|
+					li
+						= msg
+	= f.input :username, :autofocus => true, placeholder: t(:username), error: false
+	= f.input :email, placeholder: t(:email), error: false
+	= f.association :country, error: false, placeholder: t(:select_country), :input_html => {:onchange => 'onCountryChange()'}
+	#region
+		= f.association :region, error: false, placeholder: t(:select_region), :input_html => {:onchange => 'onRegionChange()'}
+	#city
+		= f.association :city, error: false, placeholder: t(:select_city)
+	= f.input :birth_date, as: :date_picker, placeholder: t(:birth_date), error: false
+	= f.input :gender, collection: @genders.collect {|p| [ t(p), p ]}, as: :radio_buttons , placeholder: t(:gender), error: false
+	.form-actions
+		= f.button :submit, t(:save), :class => 'btn-primary'
+		'
+		= link_to t(:cancel), user_path(@user), :class => 'btn'
+= link_to t(:user_photos), user_photos_path(@user)
+- content_for :javascripts do
+	= javascript_include_tag 'users'

@@ -1,7 +1,7 @@
 div class="page-header"
   h3=t(:photo)
 p
-  = image_tag @photo.file.url
+  = image_tag @photo.file.large.url
 p
   strong= t(:username) + ':'
   br

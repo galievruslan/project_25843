@@ -15,7 +15,9 @@ gem 'twitter-bootstrap-rails', '2.2.6' # Add bootstrap framework
 gem 'select2-rails' # Autocomplete select_tag 
 gem 'carrierwave' # Add upload files
 gem 'mini_magick' # Wrapper for Image 
-
+gem 'rails_config' # add configuration file
+gem 'jcrop-rails' # Image crop
+gem 'kaminari' # Pagination 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -23,7 +25,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem "jquery-fileupload-rails"    # Add jquery fileuploader
   gem 'bootstrap-datetimepicker-rails' # Add bootstrap datetimepicker
-
+  
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

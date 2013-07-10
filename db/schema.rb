@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130628070456) do
+ActiveRecord::Schema.define(:version => 20130708060940) do
 
   create_table "cities", :force => true do |t|
     t.integer  "country_id",               :null => false
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20130628070456) do
     t.integer  "region_id"
     t.integer  "country_id"
     t.string   "username"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

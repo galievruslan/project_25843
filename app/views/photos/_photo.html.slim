@@ -1,9 +1,9 @@
 li.span3
 	.thumbnail
-	  = image_tag photo.file.thumb.url
-	  p.text-center
-	  	= t(:data) + ': '
-	  	= l photo.created_at
+		= image_tag photo.file.thumb.url
+		p.text-center
+			= t(:date) + ': '
+			= l photo.created_at
 		.caption.text-center	
 			= link_to t(:show), user_photo_path(@user, photo), :class => 'btn btn-info btn-mini'
 			'

@@ -17,7 +17,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "photos/#{model.user_id}/#{model.id}"
+    "users/#{model.user_id}/photos/#{model.id}"
   end
 
   CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
@@ -31,15 +31,18 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :resize_to_fit => [800, 800]
-  
+  # process :resize_to_fit => [800, 800]
+  version :large do
+    resize_to_limit(600, 600)
+  end
+
   # def scale(width, height)
   #   :resize_to_fit => [width, height]
   # end
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fill => [200, 200]
+    process :resize_and_pad => [200, 200]
   end
 
   process :convert => 'jpg'
@@ -52,8 +55,8 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   'test.jpg'
-  # end
+  def filename
+    "photo.jpg" if original_filename
+  end
 
 end

@@ -7,6 +7,7 @@
 //= require select2_locale_ru
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
+//= require jcrop
 /* ===================================================
  Date and datetime pickers 
 * ===================================================*/

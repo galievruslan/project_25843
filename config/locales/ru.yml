@@ -1,4 +1,11 @@
 ru:
+  views:
+    pagination:
+        next: "Следующая"
+        last: "Последняя"
+        previous: "Предыдущая"
+        truncate: "..."
+        first: "Первая"
   date:
     formats:
       default: "%d-%m-%Y"
@@ -15,7 +22,7 @@ ru:
       long: "%B %d, %Y %H:%M:%S"
     am: "утра"
     pm: "вечера"
-  activerecord:
+  activerecord:   
     models:
       user: "Пользователь"
       country: "Страна"
@@ -73,3 +80,16 @@ ru:
   country: "Страна"
   user_photos: "Фотографии пользователя"
   you_are_sure: "Вы уверены?"
+  edit: "Редактировать"
+  edit_profile: "Редактирование профиля"
+  show: "Просмотр"
+  destroy: "Удалить"
+  add_photo: "Добавить фото"
+  photos: "Фотографии"
+  date: "Дата"
+  cancel: "Отмена"
+  comment: "Комментарий"
+  user_updated: "Пользователь успешно обновлен."
+  photo_destroyed: "Фотография успешно удалена."
+  photo_updated: "Фотография успешно обновлена."
+  photo: "Фотография"
