@@ -1,0 +1,15 @@
+h1 = t(:crop_avatar)
+= image_tag @user.avatar_url(:large), id: "cropbox"
+h4 = t(:preview)
+div style="width:100px; height:100px; overflow:hidden"
+	= image_tag @user.avatar.url(:large), :id => "preview", :style => 'max-width: none'
+br
+= form_for @user do |f|
+	- %w[x y w h].each do |attribute|
+		= f.hidden_field "crop_#{attribute}"
+	.actions
+		= f.submit t(:crop), class: 'btn btn-primary'
+		'
+		= link_to t(:cancel), edit_user_path(@user), :class => 'btn'
+- content_for :javascripts do
+	= javascript_include_tag 'crop'

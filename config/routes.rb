@@ -4,6 +4,10 @@ Project25843::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}, :path => "user", :path_names => { :edit => 'profile', :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'register' }
 
   resources :users, only: [:show, :edit, :update] do
+    member do
+      get :password, to: 'users#edit_password'
+      put :password, to: 'users#update_password'
+    end
     resources :photos, only: [:index, :show, :create, :edit, :update, :destroy]
   end
   

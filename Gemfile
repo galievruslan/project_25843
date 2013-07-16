@@ -15,6 +15,7 @@ gem 'twitter-bootstrap-rails', '2.2.6' # Add bootstrap framework
 gem 'select2-rails' # Autocomplete select_tag 
 gem 'carrierwave' # Add upload files
 gem 'mini_magick' # Wrapper for Image 
+gem 'rmagick' # Wrapper for Image 
 gem 'rails_config' # add configuration file
 gem 'jcrop-rails' # Image crop
 gem 'kaminari' # Pagination 

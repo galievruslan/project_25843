@@ -1,6 +1,8 @@
 .page-header
 	h4
 		= t(:profile)
+p
+	= image_tag @user.avatar_url(:thumb), class: 'img-polaroid' if @user.avatar?
 table.table.table-striped
 	tbody
 		tr
@@ -27,3 +29,5 @@ table.table.table-striped
 	= link_to t(:user_photos), user_photos_path(@user), class: 'btn btn-primary'
 	'
 	= link_to t(:edit), edit_user_path(@user), class: 'btn'
+	'
+	= link_to t(:change_password), password_user_path(@user), class: 'btn'

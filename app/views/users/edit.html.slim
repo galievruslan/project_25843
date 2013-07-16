@@ -12,6 +12,7 @@
 				- @user.errors.full_messages.each do |msg|
 					li
 						= msg
+	= f.input :avatar, error: false
 	= f.input :username, :autofocus => true, placeholder: t(:username), error: false
 	= f.input :email, placeholder: t(:email), error: false
 	= f.association :country, error: false, placeholder: t(:select_country), :input_html => {:onchange => 'onCountryChange()'}

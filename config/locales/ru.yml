@@ -32,6 +32,7 @@ ru:
       user:
         username: "Имя пользователя"
         password: "Пароль"
+        avatar: "Аватар"
         password_confirmation: "Подтверждение"
         email: "E-mail"
         gender: "Пол"
@@ -93,3 +94,8 @@ ru:
   photo_destroyed: "Фотография успешно удалена."
   photo_updated: "Фотография успешно обновлена."
   photo: "Фотография"
+  password_updated: "Пароль успешно обновлен."
+  crop: "Обрезать"
+  preview: "Предпросмотр"
+  crop_avatar: "Обрезать аватар"
+  avatar: "Аватар"
