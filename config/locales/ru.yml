@@ -28,6 +28,7 @@ ru:
       country: "Страна"
       region: "Регион"
       city: "Город"
+      ticket: "Заявка"
     attributes:
       user:
         username: "Имя пользователя"
@@ -42,6 +43,18 @@ ru:
         country: "Страна"
         remember_me: "Запомнить меня"
         current_password: "Текущий пароль"
+      ticket:
+        user: "Пользователь"
+        gender: "Пол"
+        q_gender: "Пол"
+        country: "Страна"
+        region: "Регион"
+        city: "Город"
+        q_age_from: "Возраст от"
+        q_age_to: "Возраст до"
+        q_country_id: "Страна"
+        q_region_id: "Регион"
+        q_city_id: "Город"
     errors:
       title: "Следующие ошибки должны быть исправлены перед сохранением"    
       messages:
@@ -99,3 +112,15 @@ ru:
   preview: "Предпросмотр"
   crop_avatar: "Обрезать аватар"
   avatar: "Аватар"
+  age_from: "Возраст от"
+  age_to: "Возраст до"
+  user: "Пользователь"
+  search_params: "Параметры поиска"
+  county_not_selected: "Страна не выбрана"
+  region_not_selected: "Регион не выбран"
+  city_not_selected: "Город не выбран"
+  new_ticket: "Новая заявка"
+  edit_ticket: "Редактирование заявки"
+  ticket_created: "Заявка успешно создана"
+  ticket_updated: "Заявка успешно обновлена"
+  ticket_destroyed: "Заявка успешно удалена"

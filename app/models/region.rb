@@ -3,4 +3,5 @@ class Region < ActiveRecord::Base
 	belongs_to :country
 	has_many :users
 	has_many :cities, :dependent => :destroy
+	has_many :tickets, :dependent => :destroy
 end

@@ -1,4 +1,5 @@
 Project25843::Application.routes.draw do
+
   root to: 'pages#index'
 
   devise_for :users, :controllers => {:registrations => "registrations"}, :path => "user", :path_names => { :edit => 'profile', :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :sign_up => 'register' }
@@ -10,6 +11,8 @@ Project25843::Application.routes.draw do
     end
     resources :photos, only: [:index, :show, :create, :edit, :update, :destroy]
   end
+
+  resources :tickets
   
   get '/countries/:country_id/regions', to: 'regions#index'
   get '/countries/:country_id/regions/:region_id/cities', to: 'cities#index'

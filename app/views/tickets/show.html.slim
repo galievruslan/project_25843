@@ -1,0 +1,28 @@
+p
+  strong = t(:user) + ': '
+  = link_to @ticket.user.username, user_path(@ticket.user)
+h4 = t(:search_params)
+p
+  strong = t(:gender) + ': '
+  = t(@ticket.q_gender)
+p
+  strong = t(:age_from) + ': '
+  = @ticket.q_age_from
+p
+  strong = t(:age_to) + ': '
+  = @ticket.q_age_to
+p
+  strong = t(:country) + ': '
+  = @ticket.q_country_id ? Country.find(@ticket.q_country_id).name : t(:county_not_selected)
+p
+  strong = t(:region) + ': '
+  = @ticket.q_region_id ? Region.find(@ticket.q_region_id).name : t(:region_not_selected)
+p
+  strong = t(:city) + ': '
+  = @ticket.q_city_id ? City.find(@ticket.q_city_id).name : t(:city_not_selected)
+
+= link_to t(:edit), edit_ticket_path(@ticket), class: 'btn btn-primary'
+'
+= link_to t(:back), tickets_path, class: 'btn'
+'
+= link_to t(:destroy), ticket_path(@ticket), method: :delete, :data => { :confirm => t(:you_are_sure) }, :class => 'btn btn-danger'

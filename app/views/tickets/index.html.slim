@@ -1,0 +1,41 @@
+h1 Listing tickets
+
+table
+  tr
+    th User
+    th Age
+    th Gender
+    th Country
+    th Region
+    th City
+    th Q gender
+    th Q age from
+    th Q age to
+    th Q country
+    th Q region
+    th Q city
+    th
+    th
+    th
+
+  - @tickets.each do |ticket|
+    tr
+      td = ticket.user_id
+      td = ticket.age
+      td = ticket.gender
+      td = ticket.country_id
+      td = ticket.region_id
+      td = ticket.city_id
+      td = ticket.q_gender
+      td = ticket.q_age_from
+      td = ticket.q_age_to
+      td = ticket.q_country_id
+      td = ticket.q_region_id
+      td = ticket.q_city_id
+      td = link_to 'Show', ticket
+      td = link_to 'Edit', edit_ticket_path(ticket)
+      td = link_to 'Destroy', ticket, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Ticket', new_ticket_path

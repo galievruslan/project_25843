@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708060940) do
+ActiveRecord::Schema.define(:version => 20130724054708) do
 
   create_table "cities", :force => true do |t|
     t.integer  "country_id",               :null => false
@@ -63,6 +63,23 @@ ActiveRecord::Schema.define(:version => 20130708060940) do
     t.string   "adm1code",   :limit => 4,  :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "age"
+    t.string   "gender"
+    t.integer  "country_id"
+    t.integer  "region_id"
+    t.integer  "city_id"
+    t.string   "q_gender"
+    t.integer  "q_age_from"
+    t.integer  "q_age_to"
+    t.integer  "q_country_id"
+    t.integer  "q_region_id"
+    t.integer  "q_city_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

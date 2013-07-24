@@ -1,0 +1,27 @@
+= simple_form_for(@ticket, :html => {:class => 'form-horizontal'}) do |f|
+	- if @ticket.errors.any?
+		div class="alert alert-error"
+			button type="button" class="close" data-dismiss="alert"
+				| &times;
+			h4
+				= t('errors.title')
+			ul
+				- @ticket.errors.full_messages.each do |msg|
+					li
+						= msg
+	.form-inputs
+		= f.input :q_gender, collection: @genders.collect {|p| [ t(p), p ]}, as: :radio_buttons , error: false
+		= f.input :q_age_from, collection: 18..60, error: false, placeholder: t(:age_from)
+		= f.input :q_age_to, collection: 18..60, error: false, placeholder: t(:age_to)
+		= f.input :q_country_id, collection: @countries, error: false, placeholder: t(:select_country), :input_html => {:onchange => 'onCountryChange()'}
+		#region
+			= f.input :q_region_id, collection: @regions, error: false, placeholder: t(:select_region), :input_html => {:onchange => 'onRegionChange()'}
+		#city
+			= f.input :q_city_id, collection: @cities, error: false, placeholder: t(:select_city)
+
+	.form-actions
+		= f.button :submit, t(:save), :class => 'btn-primary'
+		'
+		= link_to t(:cancel), root_path, :class => 'btn'
+- content_for :javascripts do
+	= javascript_include_tag 'tickets'

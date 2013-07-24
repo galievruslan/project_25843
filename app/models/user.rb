@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   belongs_to :country
   belongs_to :region
   has_many :photos, :dependent => :destroy
+  has_many :tickets, :dependent => :destroy
   validates :username, :gender, :birth_date, :city_id, :country_id, :region_id, :email, :presence => true
   validates :username, :uniqueness => { :case_sensitive => false }
   
@@ -22,5 +23,10 @@ class User < ActiveRecord::Base
   
   def crop_avatar
     avatar.recreate_versions! if crop_x.present?
+  end
+  
+  def age
+    now = Time.now.utc.to_date
+    now.year - birth_date.year - (birth_date.to_date.change(:year => now.year) > now ? 1 : 0)
   end
 end
